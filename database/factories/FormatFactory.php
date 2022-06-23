@@ -17,7 +17,11 @@ class FormatFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "name" => $this->faker->name,
+            "pages" => $this->faker->numberBetween(250, 400),
+            "isbn" => $this->faker->isbn13,
+            "realese_date" => $this->faker->date(),
+            "book_id" => $this->faker->numberBetween(1, 50),
         ];
     }
 }

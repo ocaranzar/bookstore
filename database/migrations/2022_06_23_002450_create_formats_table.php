@@ -13,9 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('formats', function (Blueprint $table) {
-            $table->id();
+        Schema::create("formats", function (Blueprint $table) {
+            $table->increments("id");
+            $table->string("name")->index();
+            $table->unsignedInteger("pages");
+            $table->char("isbn")->index();
+            $table->date("realese_date");
+            $table->unsignedInteger("book_id");
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign("book_id")->references("id")->on("books");
         });
     }
 
