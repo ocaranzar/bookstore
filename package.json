@@ -22,15 +22,24 @@
     },
     "homepage": "https://github.com/ocaranzar/bookstore#readme",
     "private": true,
+    "lint-staged": {
+        "**/*": "prettier --write --ignore-unknown"
+    },
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "prepare": "husky install"
     },
     "devDependencies": {
+        "@prettier/plugin-php": "^0.19.1",
+        "@prettier/plugin-xml": "^2.2.0",
         "axios": "^0.27",
+        "husky": "^8.0.1",
         "laravel-vite-plugin": "^0.6.0",
+        "lint-staged": "^13.0.3",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
+        "prettier": "2.7.1",
         "vite": "^3.0.0"
     }
 }
