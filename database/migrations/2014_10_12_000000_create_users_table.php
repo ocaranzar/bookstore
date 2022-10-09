@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->string("email", 50);
             $table->timestamp("email_verified_at")->nullable();
             $table->string("password")->nullable();
+            $table->foreignId("role_id");
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

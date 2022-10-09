@@ -66,6 +66,7 @@ class RegisteredUserController extends Controller
             "username" => $request->username,
             "email" => $request->email,
             "password" => $request->password,
+            "role_id" => 1,
         ]);
 
         event(new Registered($user));
