@@ -4,6 +4,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\NationalityController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WriterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,7 @@ Route::middleware(["auth"])->group(function () {
                 Route::resource("nationality", NationalityController::class);
                 Route::resource("genre", GenreController::class);
                 Route::resource("publisher", PublisherController::class);
+                Route::resource("writer", WriterController::class);
             });
         });
     });

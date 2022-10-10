@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             NationalitySeeder::class,
             GenreSeeder::class,
             PublisherSeeder::class,
+            WriterSeeder::class,
         ]);
     }
 }

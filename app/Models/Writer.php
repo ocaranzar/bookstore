@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Nationality extends Model
+class Writer extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -26,26 +26,26 @@ class Nationality extends Model
      *
      * @var array
      */
-    protected $fillable = ["name"];
+    protected $fillable = ["name", "nationality_id"];
 
     /**
-     * Interact with the nationality's name.
+     * Interact with the writer's name.
      *
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
     protected function name(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => ucfirst($value),
+            get: fn($value) => ucwords($value),
             set: fn($value) => strtolower($value)
         );
     }
 
     /**
-     * Get the writers for the nationality.
+     * Get the nationality that owns the writer.
      */
-    public function writers()
+    public function nationality()
     {
-        return $this->hasMany(Writer::class);
+        return $this->belongsTo(Nationality::class);
     }
 }
