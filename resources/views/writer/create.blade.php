@@ -8,9 +8,9 @@
         {{ $errors->first("name") }}
     @endif
 
-    <label for="nationality">nationality</label>
+    <label for="nationality">@lang("Nationality")</label>
     <select name="nationality" id="nationality" autofocus>
-        <option selected disabled>select</option>
+        <option selected disabled>@lang("Select")</option>
 
         @foreach ($nationalities as $item)
             @if (!is_null(old("nationality")) && $item->id == old("nationality"))
