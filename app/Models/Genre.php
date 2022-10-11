@@ -40,4 +40,12 @@ class Genre extends Model
             set: fn($value) => strtolower($value)
         );
     }
+
+    /**
+     * Get the books for the genre.
+     */
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

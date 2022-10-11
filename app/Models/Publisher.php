@@ -40,4 +40,12 @@ class Publisher extends Model
             set: fn($value) => $value
         );
     }
+
+    /**
+     * Get the books for the publisher.
+     */
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

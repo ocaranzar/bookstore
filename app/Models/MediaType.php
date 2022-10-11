@@ -40,4 +40,12 @@ class MediaType extends Model
             set: fn($value) => strtolower($value)
         );
     }
+
+    /**
+     * Get the mediatypes for the format.
+     */
+    public function mediatypes()
+    {
+        return $this->hasMany(MediaType::class);
+    }
 }

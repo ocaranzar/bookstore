@@ -48,4 +48,12 @@ class Writer extends Model
     {
         return $this->belongsTo(Nationality::class);
     }
+
+    /**
+     * Get the books for the writer.
+     */
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

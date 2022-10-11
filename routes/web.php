@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\FormatController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MediaTypeController;
@@ -42,6 +43,7 @@ Route::middleware(["auth"])->group(function () {
                 Route::resource("publisher", PublisherController::class);
                 Route::resource("writer", WriterController::class);
                 Route::resource("mediatype", MediaTypeController::class);
+                Route::resource("book", BookController::class);
             });
         });
     });

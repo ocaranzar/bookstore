@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             PublisherSeeder::class,
             WriterSeeder::class,
             MediaTypeSeeder::class,
+            BookSeeder::class,
         ]);
     }
 }
